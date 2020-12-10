@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', mainapp_views.main, name='main'),
     path('products/', mainapp_views.products, name='products'),
-    path('test-context/', mainapp_views.test_context, name='test_context'),
+
 ]

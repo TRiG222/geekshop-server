@@ -9,26 +9,44 @@ def main(request):
 
 
 def products(request):
-    content = {
-        'title': 'GeekShop - Категории'
-    }
-    return render(request, 'mainapp/products.html', content)
-
-
-def test_context(request):
-    """Test function for getting acquainted with the context."""
     context = {
-        'title': 'Test Context',
+        'title': 'GeekShop - Каталог',
         'header': 'Добро пожловать на сайт!',
         'username': 'Герман Триг',
         'products': [
-            {'name': 'Худи черного цвета с монограммами adidas Originals', 'price': '6 090,00 руб.'},
-            {'name': 'Синяя куртка The North Face', 'price': '23 725,00 руб.'},
-            {'name': 'Коричневый спортивный oversized-топ ASOS DESIGN', 'price': '3 390,00 руб.'},
+            {'name': 'Худи черного цвета с монограммами adidas Originals',
+             'img': '/static/vendor/img/products/Adidas-hoodie.png',
+             'price': '6 090,00 руб.',
+             'description': 'Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.'
+             },
+            {'name': 'Синяя куртка The North Face',
+             'img': '/static/vendor/img/products/Blue-jacket-The-North-Face.png',
+             'price': '23 725,00 руб.',
+             'description': 'Гладкая ткань. Водонепроницаемое покрытие. Легкий и теплый пуховый наполнитель.'
+             },
+            {'name': 'Коричневый спортивный oversized-топ ASOS DESIGN',
+             'img': '/static/vendor/img/products/Brown-sports-oversized-top-ASOS-DESIGN.png',
+             'price': '3 390,00 руб.',
+             'description': 'Материал с плюшевой текстурой. Удобный и мягкий.'},
+            {'name': 'Черный рюкзак Nike Heritage',
+             'img': '/static/vendor/img/products/Black-Nike-Heritage-backpack.png',
+             'price': '2 340,00 руб.',
+             'description': 'Плотная ткань. Легкий материал.'},
+            {'name': 'Черные туфли на платформе с 3 парами люверсов Dr Martens 1461 Bex',
+             'img': '/static/vendor/img/products/Black-Dr-Martens-shoes.png',
+             'price': '13 590,00 руб.',
+             'description': 'Гладкий кожаный верх. Натуральный материал.'},
+            {'name': 'Темно-синие широкие строгие брюки ASOS DESIGN',
+             'img': '/static/vendor/img/products/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png',
+             'price': '2 890,00 руб.',
+             'description': 'Легкая эластичная ткань сирсакер Фактурная ткань.'}
         ],
         'promotion': True,
         'products_of_promotion': [
             {'name': 'Черный рюкзак Nike Heritage', 'price': '2 340,00 руб.'},
         ]
     }
-    return render(request, 'mainapp/test_context.html', context)
+
+    return render(request, 'mainapp/products.html', context)
+
+
