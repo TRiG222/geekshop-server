@@ -1,18 +1,19 @@
 from django.shortcuts import render
+
 from mainapp.models import Product, ProductCategory
 
 
 def main(request):
     content = {
-        'title': 'GeekShop - Главная'
+        'title': 'GeekShop'
     }
     return render(request, 'mainapp/index.html', content)
 
 
-def products(request):
+def products(request, id=None):
     content = {
-        'title': 'GeekShop - Товар',
+        'title': 'GeekShop - Категории',
+        'categories': ProductCategory.objects.all(),
         'products': Product.objects.all(),
-        'product_category': ProductCategory.objects.all(),
     }
     return render(request, 'mainapp/products.html', content)
